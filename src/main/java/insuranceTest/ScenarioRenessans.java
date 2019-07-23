@@ -25,7 +25,7 @@ public class ScenarioRenessans {
         renessansMainSteps.selectMenu(nameMenu);
     }
 
-    @Когда("Выбрать валюту – \"(.+)\"$")
+    @Когда("(?:Выбрать валюту|Отметить) – \"(.+)\"$")
     public void currencySelection(String value) {
         contributionsSteps.clickCheckbox(value);
     }
@@ -33,11 +33,6 @@ public class ScenarioRenessans {
     @Когда("Ввести в поле \"(.+)\" – \"(.+)\"$")
     public void fillAmount(String nameField, String value) {
         contributionsSteps.fillFormTextField(nameField,value);
-    }
-
-    @Когда("Отметить – \"(.+)\"$")
-    public void checkboxClick(String nameField) {
-        contributionsSteps.clickCheckbox(nameField);
     }
 
     @То("Проверить расчеты по вкладу:$")
