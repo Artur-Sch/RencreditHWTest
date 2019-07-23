@@ -1,7 +1,5 @@
 package insuranceTest.pages;
 
-import insuranceTest.annotations.ElementTitle;
-import insuranceTest.core.BasePage;
 import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;

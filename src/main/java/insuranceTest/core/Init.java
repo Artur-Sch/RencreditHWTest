@@ -1,11 +1,13 @@
 package insuranceTest.core;
 
 
-
-
+import io.qameta.allure.Attachment;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
+
 import java.util.Properties;
 import java.util.concurrent.TimeUnit;
 
@@ -32,7 +34,13 @@ public class Init {
         return driver;
     }
 
-       public static void tearDown() {
+    @Attachment("Screenshot")
+    public static byte[] takeScreenshot() {
+        return ((TakesScreenshot) driver).getScreenshotAs(OutputType.BYTES);
+    }
+
+    public static void tearDown() {
+        takeScreenshot();
         driver.close();
         driver.quit();
     }

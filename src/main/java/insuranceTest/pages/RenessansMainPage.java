@@ -1,6 +1,5 @@
 package insuranceTest.pages;
 
-import insuranceTest.core.BasePage;
 import org.junit.Assert;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;

@@ -31,5 +31,7 @@ public class ContributionsSteps {
         String actual = contributionsPage.getFillField(field);
         assertTrue(String.format("Значение поля [%s] равно [%s]. Ожидалось - [%s]", field, actual, value),
                 actual.equals(value));
+
+
     }
 }
