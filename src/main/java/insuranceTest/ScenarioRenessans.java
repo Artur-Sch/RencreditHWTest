@@ -35,6 +35,12 @@ public class ScenarioRenessans {
         contributionsSteps.fillFormTextField(nameField,value);
     }
 
+    @Когда("Выбрать – \"(.+)\" и \"(.+)\"")
+    public void clickTwoCheckbox(String nameFirstBox, String nameSecondBox) {
+        contributionsSteps.clickCheckbox(nameFirstBox);
+        contributionsSteps.clickCheckbox(nameSecondBox);
+    }
+
     @То("Проверить расчеты по вкладу:$")
     public void checkCalculations(DataTable fields) {
         fields.asMap(String.class, String.class)

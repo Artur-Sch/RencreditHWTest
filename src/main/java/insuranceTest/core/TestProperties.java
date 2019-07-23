@@ -23,7 +23,6 @@ public class TestProperties {
         }
         return INSTANCE;
     }
-
     public Properties getProperties() {
         return properties;
     }

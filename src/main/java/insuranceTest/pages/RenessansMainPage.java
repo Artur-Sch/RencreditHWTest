@@ -25,6 +25,5 @@ public class RenessansMainPage extends BasePage {
         Assert.fail("Не найден пункт меню - " + nameService);
     }
 
-
 }
 
