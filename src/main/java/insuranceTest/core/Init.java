@@ -34,13 +34,8 @@ public class Init {
         return driver;
     }
 
-    @Attachment("Screenshot")
-    public static byte[] takeScreenshot() {
-        return ((TakesScreenshot) driver).getScreenshotAs(OutputType.BYTES);
-    }
 
     public static void tearDown() {
-        takeScreenshot();
         driver.close();
         driver.quit();
     }

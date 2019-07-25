@@ -1,10 +1,11 @@
 package insuranceTest.steps;
 
 
+import insuranceTest.core.Init;
 import insuranceTest.pages.ContributionsPage;
 import io.qameta.allure.Step;
-
-import static org.junit.Assert.assertTrue;
+import org.openqa.selenium.support.ui.ExpectedCondition;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class ContributionsSteps {
 
@@ -23,14 +24,9 @@ public class ContributionsSteps {
     }
 
     @Step("поле {0} заполнено значением {1}")
-    public void checkFillField(String field, String value){
-        try {
-            Thread.sleep(400);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
-        String actual = contributionsPage.getFillField(field);
-        assertTrue(String.format("Значение поля [%s] равно [%s]. Ожидалось - [%s]", field, actual, value),
-                actual.equals(value));
+    public void checkFillField(String field, String value) {
+        new WebDriverWait(Init.getDriver(), 30)
+                .withMessage(String.format("Значение поля [%s] равно [%s]. Ожидалось - [%s]", field, contributionsPage.getFillField(field), value))
+                .until((ExpectedCondition<Boolean>) driver -> contributionsPage.getFillField(field).equals(value));
     }
 }

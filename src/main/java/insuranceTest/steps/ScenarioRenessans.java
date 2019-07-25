@@ -1,11 +1,9 @@
-package insuranceTest;
+package insuranceTest.steps;
 
 import cucumber.api.java.After;
 import cucumber.api.java.ru.Когда;
 import cucumber.api.java.ru.То;
 import insuranceTest.core.Init;
-import insuranceTest.steps.ContributionsSteps;
-import insuranceTest.steps.RenessansMainSteps;
 import io.cucumber.datatable.DataTable;
 
 public class ScenarioRenessans {

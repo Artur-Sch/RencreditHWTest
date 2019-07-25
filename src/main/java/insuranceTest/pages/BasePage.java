@@ -1,6 +1,7 @@
 package insuranceTest.pages;
 
 import insuranceTest.core.Init;
+import io.qameta.allure.Attachment;
 import io.qameta.allure.Step;
 import org.openqa.selenium.*;
 import org.openqa.selenium.support.PageFactory;
@@ -21,6 +22,11 @@ public class BasePage {
     @Step("Ожидание загрузки элемента - {element}")
     public WebElement waitForReadyElement(WebElement element) {
         return webDriverWait.until(ExpectedConditions.elementToBeClickable(element));
+    }
+
+    @Attachment("Screenshot")
+    public byte[] takeScreenshot() {
+        return ((TakesScreenshot) driver).getScreenshotAs(OutputType.BYTES);
     }
 
 }

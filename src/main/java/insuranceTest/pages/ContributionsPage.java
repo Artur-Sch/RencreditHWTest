@@ -42,8 +42,8 @@ public class ContributionsPage extends BasePage {
                 }
             }
         }
+        takeScreenshot();
         Assert.fail("Не найдено поле - " + nameField);
-
     }
 
     public void clickElementSpan(String nameField) {
@@ -53,6 +53,7 @@ public class ContributionsPage extends BasePage {
                 return;
             }
         }
+        takeScreenshot();
         Assert.fail("Не найден елемент - " + nameField);
     }
 
@@ -68,5 +69,6 @@ public class ContributionsPage extends BasePage {
                 return waitForReadyElement(replenishValueElement).getText();
         }
         throw new AssertionError("Поле не объявлено на странице");
+
     }
 }
